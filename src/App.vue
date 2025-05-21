@@ -2,6 +2,7 @@
 import TogglePurple from "./components/TogglePurple.vue";
 import ChoseTextColor from "./components/ChoseTextColor.vue";
 import ChangeCircleSize from "./components/ChangeCircleSize.vue";
+import ChangeCircleRotate from "./components/ChangeCircleRotate.vue";
 
 export default {
   data() {
@@ -22,6 +23,9 @@ export default {
     },
     changeCircleSize(size) {
       this.size = parseInt(size);
+    },
+    changeCircleAngle(angle) {
+      this.angle = parseInt(angle);
     },
   },
 
@@ -49,6 +53,7 @@ export default {
     TogglePurple,
     ChoseTextColor,
     ChangeCircleSize,
+    ChangeCircleRotate,
   },
 };
 </script>
@@ -64,9 +69,7 @@ export default {
     <ChangeCircleSize :changeCircleSize="changeCircleSize" />
     <br />
 
-    <label>Circle Rotate</label>
-    <br />
-    <input type="number" v-model="angle" />
+    <ChangeCircleRotate :changeCircleAngle="changeCircleAngle" />
     <br />
 
     <div
