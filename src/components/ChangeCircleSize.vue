@@ -5,12 +5,13 @@
 
   <input
     type="number"
+    :value="size"
     @change="(event) => changeCircleSize(event.target.value)"
   />
 </template>
 
 <script>
 export default {
-  props: ["changeCircleSize"],
+  props: ["changeCircleSize", "size"],
 };
 </script>

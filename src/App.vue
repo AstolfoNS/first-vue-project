@@ -66,10 +66,10 @@ export default {
     <ChoseTextColor :changeTextColor="changeTextColor" />
     <br />
 
-    <ChangeCircleSize :changeCircleSize="changeCircleSize" />
+    <ChangeCircleSize :changeCircleSize="changeCircleSize" :size="size" />
     <br />
 
-    <ChangeCircleRotate :changeCircleAngle="changeCircleAngle" />
+    <ChangeCircleRotate :changeCircleAngle="changeCircleAngle" :angle="angle" />
     <br />
 
     <div
