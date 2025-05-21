@@ -1,5 +1,6 @@
 <script>
 import TogglePurple from "./components/TogglePurple.vue";
+import ChoseTextColor from "./components/ChoseTextColor.vue";
 
 export default {
   data() {
@@ -14,6 +15,9 @@ export default {
   methods: {
     togglePurple() {
       this.isPurple = !this.isPurple;
+    },
+    changeTextColor(color) {
+      this.textColor = color;
     },
   },
 
@@ -39,6 +43,7 @@ export default {
 
   components: {
     TogglePurple,
+    ChoseTextColor,
   },
 };
 </script>
@@ -46,16 +51,9 @@ export default {
 <template>
   <div class="container">
     <TogglePurple :togglePurple="togglePurple" />
-
     <br />
 
-    <label>Text color</label>
-    <br />
-    <select v-model="textColor">
-      <option value="green">Green</option>
-      <option value="red">Red</option>
-      <option value="blue">Blue</option>
-    </select>
+    <ChoseTextColor :changeTextColor="changeTextColor" />
     <br />
 
     <label>Circle size</label>
