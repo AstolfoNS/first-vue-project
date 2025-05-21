@@ -1,47 +1,110 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+export default {
+  data() {
+    return {
+      isPurple: false,
+      textColor: "",
+      size: 200,
+      angle: 0,
+    };
+  },
+
+  methods: {},
+  computed: {
+    circleClass() {
+      return {
+        purple: this.isPurple,
+      };
+    },
+    circleSize() {
+      return {
+        height: `${this.size}px`,
+        width: `${this.size}px`,
+        lineheight: `${this.size}px`,
+      };
+    },
+    circleAngle() {
+      return {
+        transform: `rotate(${this.angle}deg)`,
+      };
+    },
+  },
+};
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="container">
+    <label><input type="checkbox" v-model="isPurple" />Purple</label>
+    <br />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <label>Text color</label>
+    <br />
+    <select v-model="textColor">
+      <option value="green">Green</option>
+      <option value="red">Red</option>
+      <option value="blue">Blue</option>
+    </select>
+    <br />
+
+    <label>Circle size</label>
+    <br />
+    <input type="number" v-model="size" />
+    <br />
+
+    <label>Circle Rotate</label>
+    <br />
+    <input type="number" v-model="angle" />
+    <br />
+
+    <div
+      class="circle"
+      :class="[circleClass, textColor]"
+      :style="[circleSize, circleAngle]"
+    >
+      Hi
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  background-color: #f0f0f0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  background-color: rgb(000, 000, 255);
+
+  color: white;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.purple {
+  background-color: rgb(128, 000, 128);
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.blue {
+  color: rgb(000, 000, 255);
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.green {
+  color: rgb(000, 255, 000);
+}
+
+.red {
+  color: rgb(255, 000, 000);
 }
 </style>
