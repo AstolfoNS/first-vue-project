@@ -1,4 +1,6 @@
 <script>
+import TogglePurple from "./components/TogglePurple.vue";
+
 export default {
   data() {
     return {
@@ -9,7 +11,12 @@ export default {
     };
   },
 
-  methods: {},
+  methods: {
+    togglePurple() {
+      this.isPurple = !this.isPurple;
+    },
+  },
+
   computed: {
     circleClass() {
       return {
@@ -29,12 +36,17 @@ export default {
       };
     },
   },
+
+  components: {
+    TogglePurple,
+  },
 };
 </script>
 
 <template>
   <div class="container">
-    <label><input type="checkbox" v-model="isPurple" />Purple</label>
+    <TogglePurple :togglePurple="togglePurple" />
+
     <br />
 
     <label>Text color</label>
@@ -66,45 +78,4 @@ export default {
   </div>
 </template>
 
-<style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.circle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-
-  background-color: rgb(000, 000, 255);
-
-  color: white;
-}
-
-.purple {
-  background-color: rgb(128, 000, 128);
-}
-
-.blue {
-  color: rgb(000, 000, 255);
-}
-
-.green {
-  color: rgb(000, 255, 000);
-}
-
-.red {
-  color: rgb(255, 000, 000);
-}
-</style>
+<style scoped></style>
