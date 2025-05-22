@@ -1,7 +1,7 @@
 <template>
-  <label>Text color</label>
-
   <br />
+
+  <slot />
 
   <select @change="(event) => $emit('change-text-color', event.target.value)">
     <option value="green">Green</option>

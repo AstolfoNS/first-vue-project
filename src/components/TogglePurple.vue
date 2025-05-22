@@ -1,7 +1,11 @@
 <template>
-  <label
-    ><input type="checkbox" @change="$emit('toggle-purple')" />Purple</label
-  >
+  <br />
+
+  <label>
+    <input type="checkbox" @change="$emit('toggle-purple')" />
+
+    <slot />
+  </label>
 </template>
 
 <script>

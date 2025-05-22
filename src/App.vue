@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-    <TogglePurple @toggle-purple="togglePurple" />
-    <br />
+    <TogglePurple @toggle-purple="togglePurple"> Purple </TogglePurple>
 
-    <ChoseTextColor @change-text-color="changeTextColor" />
-    <br />
+    <ChoseTextColor @change-text-color="changeTextColor">
+      <label>Text Color:</label>
+    </ChoseTextColor>
 
     <CircleChange @change-circle="changeCircleSize" :param="size">
-      Circle size
+      <label>Circle size:</label>
     </CircleChange>
 
     <CircleChange @change-circle="changeCircleAngle" :param="angle">
-      Circle rotate
+      <label>Circle rotate:</label>
     </CircleChange>
 
     <Circle
