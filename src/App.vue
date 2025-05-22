@@ -3,7 +3,7 @@
     <TogglePurple @toggle-purple="togglePurple" />
     <br />
 
-    <ChoseTextColor :changeTextColor="changeTextColor" />
+    <ChoseTextColor @change-text-color="changeTextColor" />
     <br />
 
     <ChangeCircleSize :changeCircleSize="changeCircleSize" :size="size" />

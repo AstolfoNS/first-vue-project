@@ -3,7 +3,7 @@
 
   <br />
 
-  <select @change="(event) => changeTextColor(event.target.value)">
+  <select @change="(event) => $emit('change-text-color', event.target.value)">
     <option value="green">Green</option>
     <option value="red">Red</option>
     <option value="blue">Blue</option>
@@ -12,6 +12,7 @@
 
 <script>
 export default {
-  props: ["changeTextColor"],
+  // props: ["changeTextColor"],
+  emits: ["change-text-color"],
 };
 </script>
