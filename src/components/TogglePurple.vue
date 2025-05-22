@@ -1,9 +1,12 @@
 <template>
-  <label><input type="checkbox" @change="togglePurple" />Purple</label>
+  <label
+    ><input type="checkbox" @change="$emit('toggle-purple')" />Purple</label
+  >
 </template>
 
 <script>
 export default {
-  props: ["togglePurple"], // 接收父组件传递的函数
+  // props: ["togglePurple"],
+  emits: ["toggle-purple"],
 };
 </script>

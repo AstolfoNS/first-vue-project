@@ -1,3 +1,27 @@
+<template>
+  <div class="container">
+    <TogglePurple @toggle-purple="togglePurple" />
+    <br />
+
+    <ChoseTextColor :changeTextColor="changeTextColor" />
+    <br />
+
+    <ChangeCircleSize :changeCircleSize="changeCircleSize" :size="size" />
+    <br />
+
+    <ChangeCircleRotate :changeCircleAngle="changeCircleAngle" :angle="angle" />
+    <br />
+
+    <Circle
+      :circleClass="circleClass"
+      :circleSize="circleSize"
+      :circleAngle="circleAngle"
+      :textColor="textColor"
+    />
+    <br />
+  </div>
+</template>
+
 <script>
 import TogglePurple from "./components/TogglePurple.vue";
 import ChoseTextColor from "./components/ChoseTextColor.vue";
@@ -59,29 +83,5 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="container">
-    <TogglePurple :togglePurple="togglePurple" />
-    <br />
-
-    <ChoseTextColor :changeTextColor="changeTextColor" />
-    <br />
-
-    <ChangeCircleSize :changeCircleSize="changeCircleSize" :size="size" />
-    <br />
-
-    <ChangeCircleRotate :changeCircleAngle="changeCircleAngle" :angle="angle" />
-    <br />
-
-    <Circle
-      :circleClass="circleClass"
-      :circleSize="circleSize"
-      :circleAngle="circleAngle"
-      :textColor="textColor"
-    />
-    <br />
-  </div>
-</template>
 
 <style scoped></style>
